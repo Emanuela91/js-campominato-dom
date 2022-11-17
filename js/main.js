@@ -42,16 +42,18 @@
 let button = document.getElementById("play");
 const contenitore = document.querySelector(".container");
 
-// creo un array di 16 numeri
-const myArr = genNumRandom(16, 1, 16);
-// in console vedo il mio Array creato con le funzioni
-console.log(myArr);
 
 button.addEventListener("click",
+
     function(){
         contenitore.innerHTML = '';
         console.clear();
         contenitore.classList.add("active");
+    
+        // creo un array di 16 numeri
+        const myArr = genNumRandom(16, 1, 16);
+        // in console vedo il mio Array creato con le funzioni
+        console.log(myArr);
     
 
         for (let i = 1; i <= 100; i++){
@@ -70,21 +72,22 @@ button.addEventListener("click",
         };
     }
 )
-
-// genero numeri random
-function randomInteger(min, max){
-    return (Math.floor(Math.random() * ((max + 1) - min) + min));
-}
-
-function genNumRandom (quanti, minNum, maxNum) {
-    const newArr = [];
-
-    while (newArr.length < quanti){
-        let newNumber = randomInteger(minNum, maxNum);
-
-        if(!newArr.includes(newNumber)){
-            newArr.push(newNumber);
-        }
+    
+    // genero numeri random
+    function randomInteger(min, max){
+        return (Math.floor(Math.random() * ((max + 1) - min) + min));
     }
-    return newArr;
-}
+    
+    function genNumRandom (quanti, minNum, maxNum) {
+        const newArr = [];
+        
+        while (newArr.length < quanti){
+            let newNumber = randomInteger(minNum, maxNum);
+            
+            if(!newArr.includes(newNumber)){
+                newArr.push(newNumber);
+            }
+        }
+        return newArr;
+    }
+        
